@@ -12,7 +12,7 @@
 
 ## 注意！
 1. Markdown语法本身比较简单，没有使用词法分析和语法分析。
-2. 文中直接暴力嵌入了一个完整的CSS代码，来源于网络分享：https://www.cnblogs.com/zhangjk1993/p/5442676.html
+2. 文中直接暴力嵌入了一个完整的CSS代码，来源于网络分享：https://www.cnblogs.com/zhangjk1993/p/5442676.html 。见defalut.css，略有修改，使用时请与二进制文件放在同一文件夹。
 
 ### 作者：陈鲁同
 ### 时间：2017年12月12日
