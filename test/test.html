@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>test.md</title>
+<meta name="Time" content="2017-12-10 20:07:03" />
+<style type="text/css">
+
+body{
+    margin: 0 auto;
+    font-family: "Microsoft YaHei", arial,sans-serif;
+    color: #444444;
+    line-height: 1;
+    padding: 30px;
+}
+@media screen and (min-width: 768px) {
+    body {
+        width: 748px;
+        margin: 10px auto;
+    }
+}
+h1, h2, h3, h4 {
+    color: #111111;
+    font-weight: 400;
+    margin-top: 1em;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: Georgia, Palatino, serif;
+}
+h1, h2, h3, h4, h5, p , dl{
+    margin-bottom: 16px;
+    padding: 0;
+}
+h1 {
+    font-size: 48px;
+    line-height: 54px;
+}
+h2 {
+    font-size: 36px;
+    line-height: 42px;
+}
+h1, h2 {
+    border-bottom: 1px solid #EFEAEA;
+    padding-bottom: 10px;
+}
+h3 {
+    font-size: 24px;
+    line-height: 30px;
+}
+h4 {
+    font-size: 21px;
+    line-height: 26px;
+}
+h5 {
+    font-size: 18px;
+    list-style: 23px;
+}
+a {
+    color: #0099ff;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+a:hover {
+    text-decoration: none;
+    color: #ff6600;
+}
+a:visited {
+    /*color: purple;*/
+}
+ul, ol {
+    padding: 0;
+    padding-left: 24px;
+    margin: 0;
+}
+li {
+    line-height: 24px;
+}
+p, ul, ol {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+ol ol, ul ol {
+    list-style-type: lower-roman;
+}
+
+/*pre {
+ padding: 0px 24px;
+ max-width: 800px;
+ white-space: pre-wrap;
+ }
+ code {
+ font-family: Consolas, Monaco, Andale Mono, monospace;
+ line-height: 1.5;
+ font-size: 13px;
+ }*/
+
+code, pre {
+    border-radius: 3px;
+    background-color:#f7f7f7;
+    color: inherit;
+}
+
+code {
+    font-family: Consolas, Monaco, Andale Mono, monospace;
+    margin: 0 2px;
+}
+
+pre {
+    line-height: 1.7em;
+    overflow: auto;
+    padding: 6px 10px;
+    border-left: 5px solid #6CE26C;
+}
+
+pre > code {
+    border: 0;
+    display: inline;
+    max-width: initial;
+    padding: 0;
+    margin: 0;
+    overflow: initial;
+    line-height: inherit;
+    font-size: .85em;
+    white-space: pre;
+    background: 0 0;
+    
+}
+
+code {
+    color: #666555;
+}
+
+
+/** markdown preview plus 对于代码块的处理有些问题, 所以使用统一的颜色 */
+/*code .keyword {
+ color: #8959a8;
+ }
+ 
+ code .number {
+ color: #f5871f;
+ }
+ 
+ code .comment {
+ color: #998
+ }*/
+
+aside {
+    display: block;
+    float: right;
+    width: 390px;
+}
+blockquote {
+    border-left:.5em solid #eee;
+    padding: 0 0 0 2em;
+    margin-left:0;
+}
+blockquote  cite {
+    font-size:14px;
+    line-height:20px;
+    color:#bfbfbf;
+}
+blockquote cite:before {
+    content: '\2014 \00A0';
+}
+
+blockquote p {
+    color: #666;
+}
+hr {
+    text-align: left;
+    color: #999;
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+}
+
+dl {
+    padding: 0;
+}
+
+dl dt {
+    padding: 10px 0;
+    margin-top: 16px;
+    font-size: 1em;
+    font-style: italic;
+    font-weight: bold;
+}
+
+dl dd {
+    padding: 0 16px;
+    margin-bottom: 16px;
+}
+
+dd {
+    margin-left: 0;
+}
+
+/* Code below this line is copyright Twitter Inc. */
+
+button,
+input,
+select,
+textarea {
+    font-size: 100%;
+    margin: 0;
+    vertical-align: baseline;
+    *vertical-align: middle;
+}
+button, input {
+    line-height: normal;
+    *overflow: visible;
+}
+button::-moz-focus-inner, input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    cursor: pointer;
+    -webkit-appearance: button;
+}
+input[type=checkbox], input[type=radio] {
+    cursor: pointer;
+}
+/* override default chrome & firefox settings */
+input:not([type="image"]), textarea {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+input[type="search"] {
+    -webkit-appearance: textfield;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+label,
+input,
+select,
+textarea {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: normal;
+    margin-bottom: 18px;
+}
+input[type=checkbox], input[type=radio] {
+    cursor: pointer;
+    margin-bottom: 0;
+}
+input[type=text],
+input[type=password],
+textarea,
+select {
+    display: inline-block;
+    width: 210px;
+    padding: 4px;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 18px;
+    height: 18px;
+    color: #808080;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+select, input[type=file] {
+    height: 27px;
+    line-height: 27px;
+}
+textarea {
+    height: auto;
+}
+/* grey out placeholders */
+:-moz-placeholder {
+    color: #bfbfbf;
+}
+::-webkit-input-placeholder {
+    color: #bfbfbf;
+}
+input[type=text],
+input[type=password],
+select,
+textarea {
+    -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+    transition: border linear 0.2s, box-shadow linear 0.2s;
+    -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+input[type=text]:focus, input[type=password]:focus, textarea:focus {
+    outline: none;
+    border-color: rgba(82, 168, 236, 0.8);
+    -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+    -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+}
+/* buttons */
+button {
+    display: inline-block;
+    padding: 4px 14px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    background-color: #0064cd;
+    background-repeat: repeat-x;
+    background-image: -khtml-gradient(linear, left top, left bottom, from(#049cdb), to(#0064cd));
+    background-image: -moz-linear-gradient(top, #049cdb, #0064cd);
+    background-image: -ms-linear-gradient(top, #049cdb, #0064cd);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #049cdb), color-stop(100%, #0064cd));
+    background-image: -webkit-linear-gradient(top, #049cdb, #0064cd);
+    background-image: -o-linear-gradient(top, #049cdb, #0064cd);
+    background-image: linear-gradient(top, #049cdb, #0064cd);
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    border: 1px solid #004b9a;
+    border-bottom-color: #003f81;
+    -webkit-transition: 0.1s linear all;
+    -moz-transition: 0.1s linear all;
+    transition: 0.1s linear all;
+    border-color: #0064cd #0064cd #003f81;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+}
+button:hover {
+    color: #fff;
+    background-position: 0 -15px;
+    text-decoration: none;
+}
+button:active {
+    -webkit-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+table {
+    *border-collapse: collapse; /* IE7 and lower */
+    border-spacing: 0;
+    width: 100%;
+}
+table {
+    border: solid #ccc 1px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    /*-webkit-box-shadow: 0 1px 1px #ccc;
+     -moz-box-shadow: 0 1px 1px #ccc;
+     box-shadow: 0 1px 1px #ccc;   */
+}
+table tr:hover {
+    background: #fbf8e9;
+    -o-transition: all 0.1s ease-in-out;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+table td, .table th {
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    padding: 10px;
+}
+
+table th {
+    background-color: #dce9f9;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ebf3fc), to(#dce9f9));
+    background-image: -webkit-linear-gradient(top, #ebf3fc, #dce9f9);
+    background-image:    -moz-linear-gradient(top, #ebf3fc, #dce9f9);
+    background-image:     -ms-linear-gradient(top, #ebf3fc, #dce9f9);
+    background-image:      -o-linear-gradient(top, #ebf3fc, #dce9f9);
+    background-image:         linear-gradient(top, #ebf3fc, #dce9f9);
+    /*-webkit-box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+     -moz-box-shadow:0 1px 0 rgba(255,255,255,.8) inset;
+     box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;*/
+    border-top: none;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+    padding: 5px;
+}
+
+table td:first-child, table th:first-child {
+    border-left: none;
+}
+
+table th:first-child {
+    -moz-border-radius: 6px 0 0 0;
+    -webkit-border-radius: 6px 0 0 0;
+    border-radius: 6px 0 0 0;
+}
+table th:last-child {
+    -moz-border-radius: 0 6px 0 0;
+    -webkit-border-radius: 0 6px 0 0;
+    border-radius: 0 6px 0 0;
+}
+table th:only-child{
+    -moz-border-radius: 6px 6px 0 0;
+    -webkit-border-radius: 6px 6px 0 0;
+    border-radius: 6px 6px 0 0;
+}
+table tr:last-child td:first-child {
+    -moz-border-radius: 0 0 0 6px;
+    -webkit-border-radius: 0 0 0 6px;
+    border-radius: 0 0 0 6px;
+}
+table tr:last-child td:last-child {
+    -moz-border-radius: 0 0 6px 0;
+    -webkit-border-radius: 0 0 6px 0;
+    border-radius: 0 0 6px 0;
+}
+</style>
+<meta charset="utf-8"/>
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdn.bootcss.com/raphael/2.2.7/raphael.js"></script>
+<script src="https://cdn.bootcss.com/flowchart/1.7.0/flowchart.js"></script>
+</head>
+<body>
+<div id = "wrapper"> <div id="left"></div><div id="main">
+<a name="下面是MarkDown测试"></a><h1>下面是MarkDown测试</h1>
+<br />
+[TOC]
+<ol style = "line-height:80%">
+<li> <a href="#下面是MarkDown测试">下面是MarkDown测试</a> </li>
+<ol style = "line-height:80%">
+<ol style = "line-height:80%">
+<li> <a href="#1、标题">1、标题</a> </li>
+</ol>
+</ol>
+<li> <a href="#Title1">Title1</a> </li>
+<ol style = "line-height:80%">
+<li> <a href="#Title2">Title2</a> </li>
+<ol style = "line-height:80%">
+<li> <a href="#Title3">Title3</a> </li>
+<ol style = "line-height:80%">
+<li> <a href="#Title4">Title4</a> </li>
+<ol style = "line-height:80%">
+<li> <a href="#Title5">Title5</a> </li>
+<ol style = "line-height:80%">
+<li> <a href="#Title6">Title6</a> </li>
+</ol>
+</ol>
+</ol>
+<li> <a href="#2、分割线">2、分割线</a> </li>
+<li> <a href="#3、列表">3、列表</a> </li>
+<li> <a href="#4、修饰">4、修饰</a> </li>
+<li> <a href="#5、图片和链接">5、图片和链接</a> </li>
+<ol style = "line-height:80%">
+<li> <a href="#导入图片">导入图片</a> </li>
+<li> <a href="#导入链接">导入链接</a> </li>
+<li> <a href="#导入角标">导入角标</a> </li>
+</ol>
+<li> <a href="#6、引用、代码">6、引用、代码</a> </li>
+<ol style = "line-height:80%">
+<li> <a href="#也可以使用行间代码">也可以使用行间代码</a> </li>
+</ol>
+<li> <a href="#7、表格">7、表格</a> </li>
+<ol style = "line-height:80%">
+<li> <a href="#例如如下表格">例如如下表格</a> </li>
+</ol>
+<li> <a href="#8、TOC">8、TOC</a> </li>
+<li> <a href="#9、HTML">9、HTML</a> </li>
+<li> <a href="#10、流程图">10、流程图</a> </li>
+</ol>
+</ol>
+</ol>
+<br />
+<br />
+<a name="1、标题"></a><h3>1、标题</h3>
+<br />
+<code> <pre>
+<span>标题</span><br />
+<span>#&nbspTitle1</span><br />
+<span>##&nbspTitle2</span><br />
+<span>###&nbspTitle3</span><br />
+<span>####&nbspTitle4</span><br />
+<span>#####&nbspTitle5</span><br />
+<span>######&nbspTitle6</span><br />
+</pre></code>
+<br />
+<a name="Title1"></a><h1>Title1</h1>
+<a name="Title2"></a><h2>Title2</h2>
+<a name="Title3"></a><h3>Title3</h3>
+<a name="Title4"></a><h4>Title4</h4>
+<a name="Title5"></a><h5>Title5</h5>
+<a name="Title6"></a><h6>Title6</h6>
+<br />
+<a name="2、分割线"></a><h3>2、分割线</h3>
+<code> <pre>
+<span>******</span><br />
+<span>------</span><br />
+</pre></code>
+<br />
+<hr>
+<hr>
+<br />
+<a name="3、列表"></a><h3>3、列表</h3>
+<br />
+有序列表
+<br />
+<br />
+<ol><li>list1</li>
+<li>list2</li>
+<ol><li>list3</li>
+<li>list4</li>
+<ol><li>list5</li>
+</ol></ol><li>list6</li>
+</ol>
+<br />
+无序列表
+<br />
+<br />
+<ul><li>list1</li>
+<li>list2</li>
+<ul><li>list3</li>
+<li>list4</li>
+<ul><li>list5</li>
+</ul></ul><li>list6</li>
+</ul>
+<a name="4、修饰"></a><h3>4、修饰</h3>
+<br />
+<blockquote> 使用一对*倾斜<br />
+</blockquote>这是<i>  倾斜  </i>。<br />
+<blockquote> 使用一对**加粗<br />
+</blockquote>这是<b>  加粗  </b>。<br />
+<blockquote> 使用一对～～来删除<br />
+</blockquote>这是<s>  删除  </s>。<br />
+<blockquote> 使用 `来添加行内代码<br />
+</blockquote>这是<code>  printf </code>。<br />
+<blockquote> 使用一对 $ 来引用 Latex代码<br />
+</blockquote>$ A_v = \frac{-\beta * R_C}{h_{ie}} $<br />
+<br />
+<a name="5、图片和链接"></a><h3>5、图片和链接</h3>
+<a name="导入图片"></a><h4>导入图片</h4>
+<br />
+<br />
+<img src="baidu.gif" align="middle">
+<br />
+<br />
+<a name="导入链接"></a><h4>导入链接</h4>
+<br />
+<a href="http://www.baidu.com" target="_blank">百度一下</a>
+<br />
+<br />
+<a name="导入角标"></a><h4>导入角标</h4>
+<br />
+这是共模抑制比CMRR<sup>1</sup>
+<br />
+<br />
+<a name="6、引用、代码"></a><h3>6、引用、代码</h3>
+<br />
+可以使用">"来引用，可以递归
+<code> <pre>
+<span>>&nbsp引用</span><br />
+<span>>>&nbsp二级引用</span><br />
+<span>>>&nbsp二级引用</span><br />
+<span>>>>&nbsp三级引用</span><br />
+<span>>&nbsp回到一级引用</span><br />
+</pre></code>
+<blockquote> 引用<br />
+<blockquote> 二级引用<br />
+ 二级引用<br />
+<blockquote> 三级引用<br />
+</blockquote></blockquote> 回到一级引用<br />
+</blockquote><br />
+<br />
+<a name="也可以使用行间代码"></a><h4>也可以使用行间代码</h4>
+<code> <pre>
+<span>#include&lt;iostream></span><br />
+<span>using&nbspnamespace&nbspstd;</span><br />
+<span>int&nbspmain(){</span><br />
+<span>&nbsp&nbsp&nbsp&nbspcout&lt;&lt;"Hello,World"&lt;&lt;endl;</span><br />
+<span>}</span><br />
+</pre></code>
+<br />
+<a name="7、表格"></a><h3>7、表格</h3>
+<br />
+<a name="例如如下表格"></a><h4>例如如下表格</h4>
+<code> <pre>
+<span>|姓名|学号|班级|GPA|</span><br />
+<span>|:-—|:-:|:-:|--:|</span><br />
+<span>|谈健|001|03|4.3|</span><br />
+<span>|凌志|002|03|4.3|</span><br />
+</pre></code>
+<br />
+<table border="1" align="center" cellspacing="1" cellpadding="5"><tr><th>姓名</th><th>学号</th><th>班级</th><th>GPA</th></tr>
+<tr><td align="left">谈健</td><td align="center">001</td><td align="center">03</td><td align="right">4.3</td></tr>
+<tr><td align="left">凌志</td><td align="center">002</td><td align="center">03</td><td align="right">4.3</td></tr>
+</table>
+<a name="8、TOC"></a><h3>8、TOC</h3>
+<br />
+通过"[TOC]"标签，根据标题内容自动生成 内容表TOC和页面内链接。
+<br />
+<a name="9、HTML"></a><h3>9、HTML</h3>
+<br />
+可以在块之外自由使用HTML标签（不推荐），此时需要使用\ 转义字符来修饰&lt;和&amp;。
+<code> <pre>
+<span>\&nbsp&lt;i>&nbsp使用html倾斜标签&nbsp\&nbsp&lt;/i></span><br />
+<span></span><br />
+<span>\&nbsp&lt;p&nbspstyle="font-family:arial;color:red;font-size:20px;">测试复杂html属性\&nbsp&lt;/p></span><br />
+</pre></code>
+<br />
+<i>使用html倾斜标签</i>
+<br />
+<p style="font-family:arial;color:red;font-size:20px;">测试复杂html属性.</p>
+<br />
+<a name="10、流程图"></a><h3>10、流程图</h3>
+<br />
+以[flow]开始流程图，以[!flow] 结束
+<br />
+<blockquote> [flow]<br />
+ st=>start: 开始<br />
+ e=>end: 结束<br />
+ op=>operation: 一只谈健<br />
+ cond=>condition: 帅么<br />
+ st->op->cond<br />
+ cond(yes)->op<br />
+ cond(no)->e<br />
+ [!flow]<br />
+</blockquote><br />
+<br />
+<div id="flow1"></div><script>var diagram = flowchart.parse('\n'+'st=>start: 开始\n'+'e=>end: 结束\n'+'op=>operation: 一只谈健\n'+'cond=>condition: 帅么\n'+'st->op->cond\n'+'cond(yes)->op\n'+'cond(no)->e\n'+'\n'+' ');diagram.drawSVG('flow1');</script>
+<br />
+<br />
+end of file
+<br />
+</br></br></div>
+<div id="right">
+<br /></div></div>
+</body>
+</html>
